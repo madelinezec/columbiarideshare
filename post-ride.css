@@ -1,0 +1,51 @@
+a{
+    color: #c4d8e2;
+    text-decoration:none;
+}
+
+body {
+        height: 100%;
+        margin: 0;
+        width: 100%;
+        color: #c4d8e2;
+        font-family: "Helvetica Neue Light", Helvetica Neue, serif;
+}
+
+
+.page-title {
+    position: relative;
+    top: -2%:
+    font-size: 36px;
+    font-weight: lighter;  
+    margin-left:5%;
+}
+
+/*Navigation Bar*/ 
+
+nav ul {
+   display: inline;
+}
+
+nav li{
+  margin: 0; 
+  padding: 0 10px;
+  display: inline; 
+  position: relative;
+  left: 63.5%;
+  top: -45px;
+  font-variant: small-caps; 
+  font-weight: 500;
+}
+
+form{
+    position: relative;
+    float:left;
+    margin-left: 30%;
+    margin-top: 5%;
+}
+
+label{
+    line-height: 50px;
+
+}
+
