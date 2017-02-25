@@ -1,5 +1,6 @@
     function googleSignin(){
-       var provider = new firebase.auth.GoogleAuthProvider();
+        event.preventDefault();
+        var provider = new firebase.auth.GoogleAuthProvider();
         firebase.auth().signInWithRedirect(provider);
     }
 
