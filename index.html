@@ -11,7 +11,20 @@
        <nav>
            <ul>
                <li><a href="index.html">home</a></li>
-               <li><a href="create-a-ride.html">create a ride</a></li>
+               <li><button class="btn btn-link" onclick = "document.getElementById('id02').style.display='block'"style="width:auto;">CREATE A RIDE</button></a></li>
+               <div id="id02" class="modal">
+                  <form class="modal-content animate" action="action_page.php">
+                      <div class="imgcontainer">
+                           <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+                      </div>
+                      <div class = "loginMsg">
+                      <p>Where are you headed?<p>
+                          <a href="create-a-ride-to-airport.html">I need a ride to the airport</a>
+                          <a href="create-a-ride-from-airport.html">I need a ride to campus</a>
+                      </div>
+                   </form>
+               </div>
+
                <li class = "login">
                    <button onclick = "document.getElementById('id01').style.display='block'"style="width:auto;">Login</button>
                </li>
@@ -36,10 +49,10 @@
     <div class="main">
         <div class = "JFK">
             <h6>JFK</h6>
-               <p> <a href = "ridesToJFK.html">to</a>
+               <p> <a href = "toJFK.html">to</a>
                    <a href = "#">from</a></p>
         </div>
-        <div class = "JFK">
+        <div class = "Newark">
            <h6>NEWARK</h6>
                 <p> <a href = "ridesToJFK.html">to</a>
                 <a href = "#">from</a></p>
@@ -49,7 +62,7 @@
                 <p> <a href = "ridesToJFK.html">to</a>
                 <a href = "#">from</a></p>
         </div>
-           <div class = "bottomRow">
+           <div class = "createRide">
               <button class = "button" onclick = "document.getElementById('id02').style.display='block'"style="width:auto;">CREATE A RIDE</button>
            </div>    
                <div id="id02" class="modal">
@@ -59,8 +72,8 @@
                       </div>
 		      <div class = "loginMsg">
                       <p>Where are you headed?<p>
-                          <a href="create-a-ride.html">I need a ride to the airport</a>
-                          <a href="create-a-ride.html">I need a ride to campus</a>
+                          <a href="create-a-ride-to-airport.html">I need a ride to the airport</a>
+                          <a href="create-a-ride-from-airport.html">I need a ride to campus</a>
                       </div>
 		   </form>
                </div>
@@ -84,10 +97,11 @@
     messagingSenderId: "1058399238109"
   };
   firebase.initializeApp(config);
-</script>
+  var rootRef = firebase.database().ref();
 
+</script>
 <script src = "app.js"></script>
-<script>initDatabase();</script>
+<script>//initDatabase();</script>
 <script>
 // Get the modal
 var modal = document.getElementById('id01');
@@ -110,7 +124,6 @@ window.onclick= function(event){
     }
 }
 </script>
-
 
 </body>
 </html>

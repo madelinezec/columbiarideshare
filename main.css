@@ -18,61 +18,64 @@ body {
     margin-left:5%;
 }
 
-
-.dropbtn {
-    background-color: white;
-    color: #c4d8e2;
-    /*padding: 16px;*/
-    font-size: 16px;
-    font-family: "Helvetica Neue Light", Helvetica Neue, serif;
-    font-variant: small-caps;
-    border: none;
-    cursor: pointer;
-}
-
-
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #c4d8e2;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-
-/* Links inside the dropdown */
-.dropdown-content a {
-    color: white;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    font-family: "Helvetica Neue Light", Helvetica Neue, serif;
-    font-variant: small-caps;
-}
-
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #f1f1f1}
-
-
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
 .container {
     max-width: 70%;
     top: -5%;
 }
+.Newark {
+    position:relative;
+    float: left;
+    left: 35%;
+    height: 301px; 
+    width: 301px;
+    margin: 5px;
+    margin-top: -5%; 
+    background-image: url(chelsea.jpg);
+    background-size: 301px 301px;
+    line-height: 200px;   
+    text-align: center;
+    font-variant: small-caps;
+    
+}
+
+.Newark h6{
+    font-size: 30px;
+    font-variant: small-caps;
+    font-weight: 600;
+
+}
+
+
+.Newark p{
+    position: relative;
+    top: -170px;
+    word-spacing: 100px;
+    font-size: 30px;
+    font-variant: small-caps;
+    font-weight: 600;
+    color: #c4d8e2;
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    display: none;
+}
+
+.Newark p a{
+    color: #c4d8e2;
+    top: -30px;
+}
+
+
+.Newark:hover p {
+    display: block;
+    /*opacity: 0.6;*/
+}
+
+.Newark:hover{
+    opacity: 0.6;
+    display: block;
+}
+
+
 .JFK {
     position:relative;
     float: left;
@@ -81,7 +84,8 @@ body {
     width: 301px;
     margin: 5px;
     margin-top: -5%; 
-    background-image: url(https://media-cdn.tripadvisor.com/media/photo-s/03/9b/2d/f2/new-york-city.jpg);
+    background-image: url(brooklyn.jpg);
+    background-size: 301px 301px;
     line-height: 200px;   
     text-align: center;
     font-variant: small-caps;
@@ -132,7 +136,8 @@ body {
     height: 301px; 
     width: 301px;
     margin: 5px; 
-    background-image: url(https://media-cdn.tripadvisor.com/media/photo-s/03/9b/2d/f2/new-york-city.jpg);
+    background-image: url(nyu2.jpg);
+    background-size: 301px 401px;
     line-height: 200px;   
     text-align: center;
     border-bottom: 1px white;
@@ -190,6 +195,78 @@ body {
     opacity: 0.6;
     display: block;
 }
+
+
+.createRide {
+    position:relative;
+    float: left;
+    left: 35%;
+    height: 301px; 
+    width: 301px;
+    margin: 5px; 
+    background-image: url(train.jpg);
+    background-size: 401px 301px;
+    background-position: 300px 300px
+    line-height: 200px;   
+    text-align: center;
+    border-bottom: 1px white;
+    border-top: 1px white;
+    font-variant: small-caps;
+    
+}
+
+.createRide button{
+    position: relative;
+    background-color: transparent;
+    border: none;
+    padding: 110px 89px;
+    cursor:pointer;
+    text-align:center;
+    color: #c4d8e2;
+    font-size:33px;
+    font-variant: small-caps;
+    font-weight:700;
+}
+
+
+.createRide h6{
+    font-size: 30px;
+    font-variant: small-caps;
+    font-weight: 600;
+}
+
+
+.createRide p{
+    position: relative;
+    top: -170px;
+    word-spacing: 100px;
+    font-size: 30px;
+    font-variant: small-caps;
+    font-weight: 600;
+    color: #c4d8e2;
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    display: none;
+}
+
+.createRide p a{
+    color: #c4d8e2;
+    top: -30px;
+}
+
+
+.createRide:hover p {
+    display: block;
+    /*opacity: 0.6;*/
+}
+
+.createRide:hover{
+    opacity: 0.6;
+    display: block;
+}
+
+
+
 
 /*Navigation Bar*/ 
 nav ul {

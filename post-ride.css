@@ -49,3 +49,12 @@ label{
 
 }
 
+ride{
+    background-color: #fefefe;
+    margin: 5px auto; /* 15% from the top and centered */
+    border: 12px solid #888;
+    border-color: #c4d8e2;
+    width: 30%; /* Could be more or less, depending on screen size */
+    height: 60%;
+
+}
