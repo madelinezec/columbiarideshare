@@ -44,7 +44,10 @@
        }
 
        function writeRide(airportSelect, date, startTime, endTime){
-           firebase.database().ref('airport/' + airportSelect).set({
+          var ref = firebase.database().ref();
+          var postsRef = ref.child('TOairport/' + airportSelect); 
+          var newPostRef = postsRef.push(); 
+          newPostRef.set({
                //aiport: airportSelect,
 	       when: date, 
 	       from: startTime, 
