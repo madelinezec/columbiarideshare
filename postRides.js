@@ -2,9 +2,9 @@
         console.log("I get called");
         var ref = firebase.database().ref();
 	ref.on("value", function(snapshot) {
-	//  console.log(snapshot.val());
+	  console.log(snapshot.val());
 	  }, function (errorObject) {
-	//    console.log("The read failed: " + errorObject.code);
+	   console.log("The read failed: " + errorObject.code);
 	    });
 	 
          // Attach an asynchronous callback to read the data at our posts reference
@@ -33,11 +33,7 @@
 
 	 ref.child(direction + '/' + airport).once("value", function(data) {
              data.forEach(function(snapshot) {
-	         $("#ride").append('<p>' + snapshot.val().from + 'to: ' + snapshot.val().to + 'day: ' + snapshot.val().when + '</p>').css('background-color', 'red');
-	        // var node = document.getElementById('ride');
-                // console.log(data.val());
-		// console.log(snapshot.val().from);
-//	         node.innerHTML.appendChild('<p>' + snapshot.val().from + 'to: ' + snapshot.val().to + 'day: ' + snapshot.val().when + '</p>');
+	         $("#ride").append('<ul class = "style"><li> ' + snapshot.val().when +'</li><li> Time: ' + snapshot.val().from + ' - ' + snapshot.val().to + '</li> </ul>');
 	     });
 });
 
