@@ -25,6 +25,7 @@
  
        function rideToPressed(){
         event.preventDefault();
+	console.log("correct you got here");
            var e = document.getElementById("airport");
            var airportSelect = e.options[e.selectedIndex].text;
            
@@ -38,12 +39,13 @@
 	   
 	   console.log(airportSelect);
 	   console.log(fromTime + ' ' + toTime);
-
-	   writeRideTo(airportSelect, res, fromTime, toTime);
+	   var text = document.getElementById('comment').value;
+	   console.log(text);
+	   writeRideTo(airportSelect, res, fromTime, toTime, text);
 
        }
 
-       function writeRideTo(airportSelect, date, startTime, endTime){
+       function writeRideTo(airportSelect, date, startTime, endTime, text){
           var ref = firebase.database().ref();
           var postsRef = ref.child('TOairport/' + airportSelect); 
           var newPostRef = postsRef.push(); 
@@ -51,7 +53,8 @@
                //aiport: airportSelect,
 	       when: date, 
 	       from: startTime, 
-	       to: endTime
+	       to: endTime,
+               comments: text
 	   });
        }
 
@@ -68,6 +71,7 @@ function rideFromPressed(){
            console.log('new res' + res);
            var fromTime = $("#startTime").val();
            var toTime = $("#endTime").val();
+           var text = $("#comment").val();
 
            console.log(airportSelect);
            console.log(fromTime + ' ' + toTime);
@@ -76,7 +80,7 @@ function rideFromPressed(){
 
        }
 
-       function writeRideFrom(airportSelect, date, startTime, endTime){
+       function writeRideFrom(airportSelect, date, startTime, endTime, text){
           var ref = firebase.database().ref();
           var postsRef = ref.child('FROMairport/' + airportSelect);
           var newPostRef = postsRef.push();
@@ -84,6 +88,7 @@ function rideFromPressed(){
                //aiport: airportSelect,
                when: date,
                from: startTime,
-               to: endTime
+               to: endTime,
+	       comments: text
            });
        }

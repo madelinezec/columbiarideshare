@@ -1,5 +1,4 @@
-    function postRides(direction, airport){
-        console.log("I get called");
+    function loadRides(direction, airport){
         var ref = firebase.database().ref();
 	ref.on("value", function(snapshot) {
 	  console.log(snapshot.val());
@@ -33,9 +32,11 @@
 
 	 ref.child(direction + '/' + airport).once("value", function(data) {
              data.forEach(function(snapshot) {
-	         $("#ride").append('<ul class = "style"><li> ' + snapshot.val().when +'</li><li> Time: ' + snapshot.val().from + ' - ' + snapshot.val().to + '</li> </ul>');
+	         $("#ride").append('<ul class = "style"><li> ' + snapshot.val().when +'</li><li> Time: ' + snapshot.val().from + ' - ' + snapshot.val().to + '</li><li>' + snapshot.val().comments + '</li> </ul>');
 	     });
 });
 
 
 }
+
+   
