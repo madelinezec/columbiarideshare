@@ -440,3 +440,18 @@ nav li a{
     margin-top: 50%;
     font-size: 36px;
 }
+
+button {
+    background: none; 
+    padding: 0;
+    border: none;
+    font-family: "Helvetica Neue Light", Helvetica Neue, serif;
+    font-variant: small-caps;
+    font-weight: 500;    
+    color: #c4d8e2;
+}
+
+button:hover{
+    cursor: pointer;
+}
+

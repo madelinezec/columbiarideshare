@@ -40,13 +40,26 @@
        <nav>
            <ul>
                <li><a href="index.html">home</a></li>
-               <li>create a ride</li>
                <li>login</li>
+               <li class = "login"><button onclick = "document.getElementById('id01').style.display='block'"style="width:auto;">LOGIN</button></li>
+                 <div id="id01" class="modal">
+                     <form class="modal-content animate" action="action_page.php">
+                         <div class="imgcontainer">
+                             <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                         </div>
+                         <div class="loginMsg">
+                             <p>hi there!</p>
+                             <p>log in to post and comment on columbia ride share</p>
+                         </div>
+                         <button class="loginBtn loginBtn--facebook">connect with facebook</button>
+                         <button onclick = "googleSignin()" class="loginBtn loginBtn--google">connect with google</button>
+                      </form>
+                   </div>
            </ul>
        </nav>
   </header>
-  <div class = "form">
       
+   <div class = "submission">
       <form action="action_page.php">
 	 <label for="airport">Airport</label>
 	 <select id="airport" name="airport">
@@ -54,9 +67,10 @@
 	     <option value="laguardia">Laguardia</option>
 	     <option value="newark">Newark Liberty</option>
 	 </select>
-
+   
 	 <label for="day">Day</label>
 	 <input type="text" id="datepicker"><br>
+         <p></p>
 	 <label for="time">Time </label><input type="text" id="startTime" class="timepicker"> - <input type="text" id="endTime" class="timepicker"><br>
          <textarea id="comment" rows="7" cols="50" name="comment" form="usrform">Comments...</textarea><br>
          <button onclick = "rideFromPressed()" type="submit">submit</button>

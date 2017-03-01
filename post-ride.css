@@ -63,8 +63,11 @@ ul li:first-child{
 
 ul li{
     margin-bottom:10px;
+    cursor:pointer;
 }
-
+ul li:hover{
+    cursor:pointer;
+}
 .btn btn-link{
     border: none;
      background:none
@@ -239,4 +242,31 @@ button {
     font-variant: small-caps;
     font-weight: 500;    
     color: #c4d8e2;
+}
+
+.bigBtn:hover{
+    cursor:pointer;
+
+}
+#wrapper{
+    width: 400px;
+    //margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+textarea{
+    margin-top: 30px;
+    margin-left: 7px;
+}
+
+.timepicker{
+    margin-right: 5px;
+    margin-left: 7px; 
+}
+
+.label{
+   margin-right: 8px;
+
 }
