@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "columbia-ride-share"
+    "default": "columbia-ride-share",
+    "messaging": "columbia-ride-share"
   }
 }

@@ -12,15 +12,16 @@ body {
 
 .page-title {
     position: relative;
-    top: -2%:
+    padding-top: -5%;
     font-size: 36px;
     font-weight: lighter;  
     margin-left:5%;
+    line-height:35%;
 }
 
 .container {
     max-width: 70%;
-    top: -5%;
+    margin-top: 2%;
 }
 .Newark {
     position:relative;
@@ -29,7 +30,7 @@ body {
     height: 301px; 
     width: 301px;
     margin: 5px;
-    margin-top: -5%; 
+    margin-top: -14%; 
     background-image: url(chelsea.jpg);
     background-size: 301px 301px;
     line-height: 200px;   
@@ -83,7 +84,7 @@ body {
     height: 301px; 
     width: 301px;
     margin: 5px;
-    margin-top: -5%; 
+    margin-top: -14%; 
     background-image: url(brooklyn.jpg);
     background-size: 301px 301px;
     line-height: 200px;   
@@ -455,3 +456,22 @@ button:hover{
     cursor: pointer;
 }
 
+.welcome{
+   background-color: #c4d8e2;
+   height: 100%;
+   width:100%;
+   margin-top:-3%;
+   max-width: 100%;
+   float:left;
+   clear: left;
+
+}
+.intro{
+   margin-left:10%;
+   display: block;
+}
+
+.intro p{
+    color:white;
+    font-size: 32px;
+}

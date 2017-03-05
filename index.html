@@ -4,13 +4,31 @@
   <title>Columbia Ride Share</title>
   <meta charset="utf-8"/>
   <link rel="stylesheet" type="text/css" href="main.css">
+  <link rel="stylesheet" type="text/css" href="fullpage.js/jquery.fullPage.css" />
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="jquery.fullPage.js"></script>
+  <script type="text/javascript">
+		$(document).ready(function() {
+			$('#fullpage').fullpage();
+		});
+	</script>
+
+<style>
+    header{
+        position: relative;
+        z-index:1;
+    }
+
+</style>
+
+ 
 </head>
 <body>
   <header> 
        <h1 class = "page-title">Columbia Ride Share</h1>
        <nav>
            <ul>
-               <li><a href="index.html">home</a></li>
+               <li><a href="#top">home</a></li>
                <li><button class="btn btn-link" onclick = "document.getElementById('id02').style.display='block'"style="width:auto;">CREATE A RIDE</button></a></li>
                <div id="id02" class="modal">
                   <form class="modal-content animate" action="action_page.php">
@@ -45,6 +63,8 @@
            </ul>
        </nav>
   </header>
+  <div id ="fullpage">
+  <div class="section" id="section0">
   <div class="container">
     <div class="main">
         <div class = "JFK">
@@ -65,21 +85,29 @@
            <div class = "createRide">
               <button class = "button" onclick = "document.getElementById('id02').style.display='block'"style="width:auto;">CREATE A RIDE</button>
            </div>    
-               <div id="id02" class="modal">
-	          <form class="modal-content animate" action="action_page.php">
-		      <div class="imgcontainer">
-                           <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
-                      </div>
-		      <div class = "loginMsg">
-                      <p>Where are you headed?<p>
-                          <a href="create-a-ride-to-airport.html">I need a ride to the airport</a>
-                          <a href="create-a-ride-from-airport.html">I need a ride to campus</a>
-                      </div>
-		   </form>
+           <div id="id02" class="modal">
+	       <form class="modal-content animate" action="action_page.php">
+	           <div class="imgcontainer">
+                       <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+                   </div>
+		   <div class = "loginMsg">
+                       <p>Where are you headed?<p>
+                           <a href="create-a-ride-to-airport.html">I need a ride to the airport</a>
+                           <a href="create-a-ride-from-airport.html">I need a ride to campus</a>
+                    </div>
+		</form>
+            </div>
+        </div>
+    </div>
+    </div>
+          <div class="section" id="section1"> 
+          <div class = "welcome">
+               <div class = "intro">
+                   <p>Lorem ipsum elementum libero curae nam in id maecenas per, inceptos dui a aliquam velit eu ullamcorper ultricies platea, nibh adipiscing pulvinar nunc justo taciti non magna interdum lectus ligula cursus ornare aenean lacus tincidunt, semper gravida bibendum vitae laoreet morbi pharetra, nunc tellus donec imperdiet cubilia consectetur.Suscipit fermentum euismod etiam facilisis metus quam litora blandit himenaeos, convallis placerat felis mollis aliquam ante fringilla morbi tincidunt, at curabitur ligula sapien iaculis risus nullam platea morbi cursus adipiscing aliquet tempor commodo quis leo metus sem dictum.</p>
                </div>
             </div>
-       </div>
-
+         </div>
+      </div>
 <script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
 <script src="https://www.gstatic.com/firebasejs/3.6.10/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/3.6.10/firebase-auth.js"></script>
@@ -111,6 +139,17 @@ window.onclick = function(event) {
 }
 </script>
 
+<script>
+jQuery(window).scroll(function(){
+    var fromTopPx = 200; // distance to trigger
+    var scrolledFromtop = jQuery(window).scrollTop();
+    if(scrolledFromtop > fromTopPx){
+        jQuery('html').addClass('scrolled');
+    }else{
+        jQuery('html').removeClass('scrolled');
+    }
+});
+</script>
 <script> 
 var modal = document.getElementById('id02');
 
@@ -121,6 +160,18 @@ window.onclick= function(event){
     }
 }
 </script>
+<script>  
+      window.onload = function() {
+         initApp();
+      };
+</script>
+<script>
+$("a[href='#top']").click(function() {
+  $("html, body").animate({ scrollTop: 0 }, "slow");
+  return false;
+});
+</script>
+
 
 </body>
 </html>
