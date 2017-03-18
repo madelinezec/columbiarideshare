@@ -37,14 +37,75 @@ nav li{
   font-weight: 500;
 }
 
-style{
-    position: relative;
-    padding: 10px;
-    margin-left: 10%;
+//style{
+   // position: relative;
+  //  padding: 10px;
+  //  margin-left: 10%;
 
+//}
+
+.style button{
+    position: absolute;
+    font-size: 24px;
+    float: right;
+    top: 120px;
+    right: 12px;
 }
 
-ul.style{
+
+.btn-outline-info {
+  color: #c4d8e2;
+  background-image: none;
+  background-color: transparent;
+  border-color: #c4d8e2;
+  outline: 1px solid #c4d8e2;
+  font-family: "Helvetica Neue Light", Helvetica Neue, serif;
+  font-variant: small-caps;
+  font-size: 14px;
+}
+
+.btn-outline-info:hover {
+  color: #fff;
+  background-color: #c4d8e2;
+  border-color: #c4d8e2;
+  font-family: "Helvetica Neue Light", Helvetica Neue, serif;
+    font-variant: small-caps;
+}
+
+
+.style h4{
+    position: absolute;
+    float: right;
+    top: 80px;
+    right: 12px;
+    padding:0px;
+     
+}
+.style img{
+   position: absolute;
+   float:left;
+   margin-left: 10px;
+   margin-top: 10px;
+   
+
+}
+.style p{
+   position: relative;
+   max-width:5px;
+   margin-top: 45px;
+   margin-left: 10px;
+   font-size: 12px;
+   color: white;
+}
+.style ul{
+    position: relative;
+    margin-top: -78px;
+    margin-left: 50px;
+    list-style-type: none;
+
+}
+.style{
+    position: relative;
     background-color: #fefefe;
     //margin: 50px auto; /* 15% from the top and centered */
     margin-left: 20%;
@@ -53,7 +114,7 @@ ul.style{
     width: 50%; /* Could be more or less, depending on screen size */
     height: 40%;
     padding-bottom: 100px;
-    list-style-type: none;
+    margin-top: 10px;
 
 }
 
@@ -269,4 +330,21 @@ textarea{
 .label{
    margin-right: 8px;
 
+}
+
+html {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+html {
+}
+
+html.scrolled {
+    background-color: red;
 }

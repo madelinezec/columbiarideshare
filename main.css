@@ -12,7 +12,6 @@ body {
 
 .page-title {
     position: relative;
-    padding-top: -5%;
     font-size: 36px;
     font-weight: lighter;  
     margin-left:5%;
@@ -21,7 +20,14 @@ body {
 
 .container {
     max-width: 70%;
+    min-width: 40%;
     margin-top: 2%;
+}
+
+.main{
+    min-width: 40%;
+
+
 }
 .Newark {
     position:relative;
@@ -29,8 +35,8 @@ body {
     left: 35%;
     height: 301px; 
     width: 301px;
-    margin: 5px;
-    margin-top: -14%; 
+    margin:5px;
+    margin-top: -17%; 
     background-image: url(chelsea.jpg);
     background-size: 301px 301px;
     line-height: 200px;   
@@ -83,8 +89,8 @@ body {
     left: 35%;
     height: 301px; 
     width: 301px;
-    margin: 5px;
-    margin-top: -14%; 
+    margin:5px;
+    margin-top: -17%;
     background-image: url(brooklyn.jpg);
     background-size: 301px 301px;
     line-height: 200px;   
