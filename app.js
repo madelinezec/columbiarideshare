@@ -2,6 +2,36 @@
      this.auth = firebase.auth();
        this.database = firebase.database();
 	 console.log('initApp called');
+      firebase.auth().getRedirectResult().then(function(result) {
+        if (result.credential) {
+          // This gives you a Google Access Token. You can use it to access the Google API.
+          var token = result.credential.accessToken;
+          // [START_EXCLUDE]
+//          document.getElementById('quickstart-oauthtoken').textContent = token;
+        } else {
+          // [END_EXCLUDE]
+        }
+        // The signed-in user info.
+        var user = result.user;
+      }).catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // The email of the user's account used.
+        var email = error.email;
+        // The firebase.auth.AuthCredential type that was used.
+        var credential = error.credential;
+        // [START_EXCLUDE]
+        if (errorCode === 'auth/account-exists-with-different-credential') {
+          alert('You have already signed up with a different auth provider for that email.');
+          // If you are using multiple auth providers on your app you should handle linking
+          // the user's accounts here.
+        } else {
+          console.error(error);
+        }
+        // [END_EXCLUDE]
+      });
+
       // Listening for auth state changes.
       // [START authstatelistener]
       firebase.auth().onAuthStateChanged(function(user) {
@@ -9,18 +39,31 @@
             currentUser = user;
 	    console.log(user);
 	    console.log('success');
+	    document.getElementById('quickstart-sign-in').textContent = 'LOG OUT';
+	    document.getElementById('quickstart-sign-in').addEventListener('click', googleSignOut);
         //
         }else{
+	document.getElementById('quickstart-sign-in').textContent = 'LOGIN';
+	document.getElementById('quickstart-sign-in').addEventListener('click', 
+	function(){
+	    document.getElementById('id01').style.display='block';
+	    });
+	
          //  
 	}
     });
    }
-
+ function googleSignOut(){
+    console.log('sign out called');
+    firebase.auth().signOut();
+ }
 
  function googleSignin(){
-        event.preventDefault();
-        var provider = new firebase.auth.GoogleAuthProvider();
-        firebase.auth().signInWithRedirect(provider);
+    console.log('you get called');
+	    event.preventDefault();
+	    var provider = new firebase.auth.GoogleAuthProvider();
+
+            firebase.auth().signInWithRedirect(provider);
     }
 
        function rideToPressed(){

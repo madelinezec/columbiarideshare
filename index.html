@@ -39,7 +39,7 @@
                          </form>
                      </div>
                     <li class = "login">
-                        <button onclick = "document.getElementById('id01').style.display='block'"style="width:auto;">LOGIN</button>
+                        <button style="width:auto;" id="quickstart-sign-in">LOGIN</button>
                     </li>
                     <div id="id01" class="modal">
                         <form class="modal-content animate" action="action_page.php">
@@ -126,7 +126,8 @@
 
             // When the user clicks anywhere outside of the modal, close it
             window.onclick = function(event) {
-                if (event.target == modal) {
+                if (event.target == modal || document.getElementById('quickstart-sign-in').textContent == 'LOG OUT') {
+                    console.log('hello');
                     modal.style.display = "none";
                 }
             }
