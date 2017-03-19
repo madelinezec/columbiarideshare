@@ -12,19 +12,24 @@ body {
 	background-color: #F4F3F3;
 }
 
-
+.top{
+    height:5px;
+    width:100%;
+}
 .page-title {
     position: relative;
-    top: -2%:
     font-size: 36px;
     font-weight: lighter;  
     margin-left:5%;
+    margin-top:1px;
 }
 
 /*Navigation Bar*/ 
 header{
     background-color:white;
-    margin-top:-20px;
+}
+nav{
+    background-color: #F4F3F3;
 }
 nav ul {
    display: inline;
