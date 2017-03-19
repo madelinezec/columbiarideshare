@@ -10,9 +10,10 @@
           // This gives you a Google Access Token. You can use it to access the Google API.
           var token = result.credential.accessToken;
           // [START_EXCLUDE]
-//          document.getElementById('quickstart-oauthtoken').textContent = token;
+         console.log('you got access token');
+         
         } else {
-
+          console.log('you dont have access token');
           // [END_EXCLUDE]
         }
         // The signed-in user info.
@@ -35,17 +36,17 @@
         }
         // [END_EXCLUDE]
       });
-
       // Listening for auth state changes.
       // [START authstatelistener]
       firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
-            currentUser = user;
+           
+            window.currentUser = user;
 	    console.log(user);
 	    console.log('success');
 	    document.getElementById('quickstart-sign-in').textContent = 'LOG OUT';
 	    document.getElementById('quickstart-sign-in').addEventListener('click', googleSignOut);
-        //
+          return true;
         }else{
 	document.getElementById('quickstart-sign-in').textContent = 'LOGIN';
 	document.getElementById('quickstart-sign-in').addEventListener('click', 
@@ -53,7 +54,8 @@
 	    document.getElementById('id01').style.display='block';
 	    });
 	
-         //  
+         // 
+         return false; 
 	}
     });
    }

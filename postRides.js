@@ -42,7 +42,7 @@
 
 
     function initMessenger(name){
-       if(initApp()){
+       if(window.currentUser){
            console.log('you are signed in');
            document.getElementById('convoHeader').innerHTML = name;
            document.getElementById('messages-card').style.display = "";
