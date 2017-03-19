@@ -42,8 +42,16 @@
 
 
     function initMessenger(name){
-       document.getElementById('convoHeader').innerHTML = name;
-       document.getElementById('messages-card').style.display = "";
-        window.friendlyChat = new FriendlyChat(); 
+       if(initApp()){
+           console.log('you are signed in');
+           document.getElementById('convoHeader').innerHTML = name;
+           document.getElementById('messages-card').style.display = "";
+	   window.friendlyChat = new FriendlyChat();
+	   
+       }else{
+       
+           console.log('you are not signed in');
+       }
+
     } 
    
