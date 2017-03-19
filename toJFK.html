@@ -55,6 +55,7 @@
         <div class="mdl-card__supporting-text mdl-color-text--grey-600">
          
           <div id="convoHeader">HEADER</div>
+	  <div class="wrapBox">
           <div id="messages">
             <span id="message-filler"></span>
           </div>
@@ -68,6 +69,7 @@
             <button id="submitImage" title="Add an image" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--amber-400 mdl-color-text--white">
             </button>
           </form>
+	  </div>
         </div>
       </div>
 
@@ -132,6 +134,17 @@ window.onclick= function(event){
     };
 </script>
 
-
+<script>
+    $('#convoHeader').click(function(){
+    if($('.wrapBox').is(":visible")){
+        $('.wrapBox').hide();
+	$('#messages-card-container').addClass('hide_wrapBox');
+	console.log('you get here');
+    }else{
+        $('.wrapBox').show();
+	$('#messages-card-container').removeClass('hide_wrapBox');
+    }
+});
+</script>
 </body>
 </html>

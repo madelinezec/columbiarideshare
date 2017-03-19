@@ -14,9 +14,13 @@
  * limitations under the License.
  */
 
-//html, body {
-//  font-family: 'Roboto', 'Helvetica', sans-serif;
-//}
+.hide_wrapBox {
+    max-height: 40px;
+    position:fixed;
+    bottom:0px;
+    overflow: hidden; 
+}
+
 #messages-card {
   float: right;
   z-index: 1;
@@ -24,15 +28,12 @@
   width: 300px;
   bottom: 0%;
   margin-top: 15px;
-  //outline: 1px solid gold;
 }
 #messages-card-container {
   position: absolute;
   right:0;
   z-index: 1;
-  height: 400px;
   bottom: 0%;
-  //outline: 1px solid black;
 }
 .mdl-layout__header-row span {
   margin-left: 15px;
@@ -52,16 +53,32 @@
   margin: 0 auto;
 }
 .mdl-card__supporting-text {
+  position:relative;
   width: auto;
   height: 100%;
   padding-top: 0;
   padding-bottom: 0;
-  box-shadow: 15px 15px 15px 15px #888888;
+  box-shadow: 0px 0px 2px 2px #888888;
+}
+
+#convoHeader, innerHTML{
+    position: relative;
+    color: white;
+}
+
+#convoHeader{
+   position:relative;
+   background-color: #c4d8e2;
+   padding-bottom: 6px;
+}
+
+#convoHeader:hover{
+    cursor:pointer;
 }
 #messages {
   overflow-y: auto;
   margin-bottom: 10px;
-  height: calc(100% - 80px);
+  height: 270px;
   //outline: 2px solid red;
 }
 #message-filler {
@@ -97,6 +114,7 @@
   display: table-cell;
   width: calc(100% - 40px);
   padding: 5px 0 5px 10px;
+  color: #666666;
 }
 .message-container .name {
   display: inline-block;
@@ -110,7 +128,6 @@
 #message-form {
   display: flex;
   flex-direction: row;
-  width: 275px;
   float: left;
 }
 #image-form {
@@ -121,9 +138,15 @@
 }
 #message-form .mdl-textfield {
   //width: 300px;
+   position:absolute;
+   bottom:0;
 }
 #message-form, input{
    width:295px;
+   height:32px;
+   font-size: 12px;
+   position:absolute;
+   bottom:0;
 }
 #message-form button, #image-form button {
   width: 100px;
