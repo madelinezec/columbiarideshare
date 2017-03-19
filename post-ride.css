@@ -9,6 +9,7 @@ body {
         width: 100%;
         color: #c4d8e2;
         font-family: "Helvetica Neue Light", Helvetica Neue, serif;
+	background-color: #ECECEC;
 }
 
 
@@ -21,7 +22,9 @@ body {
 }
 
 /*Navigation Bar*/ 
-
+header{
+    background-color:white;
+}
 nav ul {
    display: inline;
 }
@@ -36,13 +39,17 @@ nav li{
   font-variant: small-caps; 
   font-weight: 500;
 }
+#ride{
+    position:relative;
 
-//style{
-   // position: relative;
+}
+
+.style{
+    position: relative;
   //  padding: 10px;
   //  margin-left: 10%;
 
-//}
+}
 
 .style button{
     position: absolute;
@@ -79,6 +86,7 @@ nav li{
     top: 80px;
     right: 12px;
     padding:0px;
+    color: black;
      
 }
 .style img{
@@ -118,10 +126,12 @@ nav li{
 
 }
 
-ul li:first-child{
+.style ul li:first-child{
     font-weight: bold;
 }
-
+.style ul li{
+    color: black;
+}
 ul li{
     margin-bottom:10px;
     cursor:pointer;
