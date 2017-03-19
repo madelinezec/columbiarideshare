@@ -49,7 +49,7 @@
 	   window.friendlyChat = new FriendlyChat();
 	   
        }else{
-       
+           document.getElementById('id01').style.display='block';   
            console.log('you are not signed in');
        }
 
