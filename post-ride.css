@@ -9,7 +9,7 @@ body {
         width: 100%;
         color: #c4d8e2;
         font-family: "Helvetica Neue Light", Helvetica Neue, serif;
-	background-color: #ECECEC;
+	background-color: #F4F3F3;
 }
 
 
@@ -24,6 +24,7 @@ body {
 /*Navigation Bar*/ 
 header{
     background-color:white;
+    margin-top:-20px;
 }
 nav ul {
    display: inline;
