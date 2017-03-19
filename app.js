@@ -3,12 +3,16 @@
        this.database = firebase.database();
 	 console.log('initApp called');
       firebase.auth().getRedirectResult().then(function(result) {
+        //    document.getElementById('quickstart-sign-in').textContent = 'LOG OUT';
+        //    console.log('changing log out value');
+         //   document.getElementById('quickstart-sign-in').addEventListener('click', googleSignOut);
         if (result.credential) {
           // This gives you a Google Access Token. You can use it to access the Google API.
           var token = result.credential.accessToken;
           // [START_EXCLUDE]
 //          document.getElementById('quickstart-oauthtoken').textContent = token;
         } else {
+
           // [END_EXCLUDE]
         }
         // The signed-in user info.
@@ -56,6 +60,7 @@
  function googleSignOut(){
     console.log('sign out called');
     firebase.auth().signOut();
+  window.location = "index.html";
  }
 
  function googleSignin(){
