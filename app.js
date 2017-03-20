@@ -73,6 +73,14 @@
             firebase.auth().signInWithRedirect(provider);
     }
 
+function facebookSignIn(){
+    event.preventDefault();
+    var provider = new firebase.auth.FacebookAuthProvider();
+    firebase.auth().signInWithRedirect(provider);
+
+}
+
+
        function rideToPressed(){
         event.preventDefault();
 	console.log("correct you got here");
