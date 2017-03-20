@@ -204,10 +204,6 @@
   display: none;
 }
 @media screen and (max-width: 610px) {
-  header {
-    height: 113px;
-    padding-bottom: 80px !important;
-  }
   #user-container {
     top: 72px;
     background-color: rgb(3,155,229);

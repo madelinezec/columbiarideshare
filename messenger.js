@@ -30,8 +30,6 @@ function FriendlyChat() {
   this.mediaCapture = document.getElementById('mediaCapture');
   this.userPic = document.getElementById('user-pic');
   this.userName = document.getElementById('user-name');
-  this.signInButton = document.getElementById('sign-in');
-  this.signOutButton = document.getElementById('sign-out');
   this.signInSnackbar = document.getElementById('must-signin-snackbar');
 
   // Saves message on form submit.
@@ -48,6 +46,9 @@ function FriendlyChat() {
     this.mediaCapture.click();
   }.bind(this));
   this.mediaCapture.addEventListener('change', this.saveImageMessage.bind(this));
+  
+  this.saveMessagingDeviceToken();
+  this.requestNotificationsPermissions();
 
   this.initFirebase();
 }
@@ -133,7 +134,7 @@ FriendlyChat.prototype.saveImageMessage = function(event) {
 
   // Check if the user is signed-in
   if (this.checkSignedInWithMessage()) {
-
+    console.log('you are signed in');
     // We add a message with a loading icon that will get updated with the shared image.
     var currentUser = this.auth.currentUser;
     this.messagesRef.push({
@@ -157,17 +158,9 @@ FriendlyChat.prototype.saveImageMessage = function(event) {
 };
 
 // Signs-in Friendly Chat.
-FriendlyChat.prototype.signIn = function() {
   // Sign in Firebase using popup auth and Google as the identity provider.
-  var provider = new firebase.auth.GoogleAuthProvider();
-  this.auth.signInWithPopup(provider);
-};
 
 // Signs-out of Friendly Chat.
-FriendlyChat.prototype.signOut = function() {
-  // Sign out of Firebase.
-  this.auth.signOut();
-};
 
 // Triggers when the auth state change for instance when the user signs-in or signs-out.
 FriendlyChat.prototype.onAuthStateChanged = function(user) {
@@ -196,11 +189,12 @@ FriendlyChat.prototype.onAuthStateChanged = function(user) {
 
 // Returns true if user is signed-in. Otherwise false and displays a message.
 FriendlyChat.prototype.checkSignedInWithMessage = function() {
+   console.log('checkSignedIn called');
   // Return true if the user is signed in Firebase
   if (this.auth.currentUser) {
     return true;
   }
-
+   console.log('user not signed in');
   // Display a message to the user using a Toast.
   var data = {
     message: 'You must sign-in first',
