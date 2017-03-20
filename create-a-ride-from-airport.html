@@ -40,8 +40,7 @@
        <nav>
            <ul>
                <li><a href="index.html">home</a></li>
-               <li>login</li>
-               <li class = "login"><button onclick = "document.getElementById('id01').style.display='block'"style="width:auto;">LOGIN</button></li>
+                <li class = "login"><button id="quickstart-sign-in" "style="width:auto;">LOGIN</button></li>
                  <div id="id01" class="modal">
                      <form class="modal-content animate" action="action_page.php">
                          <div class="imgcontainer">
@@ -58,9 +57,8 @@
            </ul>
        </nav>
   </header>
-      
-   <div class = "container">
-      <div class = "main">
+  <div id = "wrapper">
+    <div class ="main">
       <form action="action_page.php">
 	 <label for="airport">Airport</label>
 	 <select id="airport" name="airport">
@@ -68,16 +66,15 @@
 	     <option value="laguardia">Laguardia</option>
 	     <option value="newark">Newark Liberty</option>
 	 </select>
-   
+
 	 <label for="day">Day</label>
 	 <input type="text" id="datepicker"><br>
          <p></p>
-	 <label for="time">Time </label><input type="text" id="startTime" class="timepicker"> - <input type="text" id="endTime" class="timepicker"><br>
+	 <label for="time" class="label">Time</label><input type="text" id="startTime" class="timepicker">-<input type="text" id="endTime" class="timepicker"><br>
          <textarea id="comment" rows="7" cols="50" name="comment" form="usrform" placeholder="Comments..."></textarea><br>
-         <button onclick = "rideFromPressed()" type="submit">submit</button>
+         <button id="submit" onclick = "rideFromPressed()" type="submit">submit</button>
     </div>
    </div>
-
 <script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
 
 <script src="https://www.gstatic.com/firebasejs/3.6.10/firebase-app.js"></script>
@@ -96,8 +93,24 @@
   firebase.initializeApp(config);
 </script>
 
+
+
+
 <script src="app.js"></script>
+
+<script>
+
+window.onload = function() {  
+    initApp();
+};
+
+</script>
 
 
 </body>
 </html>
+
+
+
+
+

@@ -86,7 +86,9 @@ function facebookSignIn(){
 	console.log("correct you got here");
            var e = document.getElementById("airport");
            var airportSelect = e.options[e.selectedIndex].text;
-           
+           if(airportSelect.indexOf(' ') > -1){
+               airportSelect = airportSelect.substring(0, airportSelect.indexOf(' ')); 
+           }
            var date = $("#datepicker").datepicker('getDate');
            var res = String(date);
            console.log(res);
@@ -125,10 +127,15 @@ function facebookSignIn(){
 
 
 function rideFromPressed(){
-        event.preventDefault();
+
+           event.preventDefault();
+           console.log("correct you got here");
            var e = document.getElementById("airport");
            var airportSelect = e.options[e.selectedIndex].text;
-    
+           
+           if(airportSelect.indexOf(' ') > -1){
+               airportSelect = airportSelect.substring(0, airportSelect.indexOf(' '));
+           }
            var date = $("#datepicker").datepicker('getDate');
            var res = String(date);
            console.log(res);
@@ -136,25 +143,29 @@ function rideFromPressed(){
            console.log('new res' + res);
            var fromTime = $("#startTime").val();
            var toTime = $("#endTime").val();
-           var text = $("#comment").val();
 
            console.log(airportSelect);
            console.log(fromTime + ' ' + toTime);
+           var text = document.getElementById('comment').value;
+           console.log(text);
 
-           writeRideFrom(airportSelect, res, fromTime, toTime);
+           writeRideFrom(airportSelect, currentUser.displayName, currentUser.email, currentUser.photoURL, res, fromTime, toTime, text);
 
        }
 
-       function writeRideFrom(airportSelect, date, startTime, endTime, text){
+       function writeRideFrom(airportSelect, userName, userEmail, photoID, date, startTime, endTime, text){
           var ref = firebase.database().ref();
           var postsRef = ref.child('FROMairport/' + airportSelect);
           var newPostRef = postsRef.push();
           newPostRef.set({
                //aiport: airportSelect,
+               user: userName,
+               email: userEmail,
+               id: photoID,
                when: date,
                from: startTime,
                to: endTime,
-	       comments: text
+               comments: text
            });
           var file = "from" + airportSelect + ".html";
           console.log('redirect to here: ' + file);

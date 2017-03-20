@@ -33,7 +33,7 @@
 	 ref.child(direction + '/' + airport).once("value", function(data) {
              data.forEach(function(snapshot) {
                  userName = snapshot.val().user;
-	         $("#ride").append('<div class= "style"><img src = "' + snapshot.val().id + '" style="width:68px;height:68px;"/><p>' + snapshot.val().user+ '</p><ul class = "styling"><li> ' + snapshot.val().when + ' '+ snapshot.val().from + ' - ' + snapshot.val().to + '</li><li>' + snapshot.val().comments + '</li><h4>currently 1 rider</h4><button type="button" class="btn btn-outline-info" onclick = "initMessenger(userName)">join this ride</button></ul></div>');
+	         $("#ride").append('<div class= "style"><img src = "' + snapshot.val().id + '" style="width:68px;height:68px;"/><p>' + snapshot.val().user+ '</p><ul class = "styling"><li> ' + snapshot.val().when + ' '+ snapshot.val().from + ' - ' + snapshot.val().to + '</li><li>' + snapshot.val().comments + '</li><button type="button" class="btn btn-outline-info" onclick = "initMessenger(userName)">join this ride</button></ul></div>');
 	     });
 });
 

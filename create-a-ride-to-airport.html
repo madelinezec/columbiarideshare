@@ -40,7 +40,7 @@
        <nav>
            <ul>
                <li><a href="index.html">home</a></li>
-                <li class = "login"><button class="bigBtn" onclick = "document.getElementById('id01').style.display='block'"style="width:auto;">LOGIN</button></li>
+                <li class = "login"><button id="quickstart-sign-in" "style="width:auto;">LOGIN</button></li>
                  <div id="id01" class="modal">
                      <form class="modal-content animate" action="action_page.php">
                          <div class="imgcontainer">
@@ -72,7 +72,7 @@
          <p></p>
 	 <label for="time" class="label">Time</label><input type="text" id="startTime" class="timepicker">-<input type="text" id="endTime" class="timepicker"><br>
          <textarea id="comment" rows="7" cols="50" name="comment" form="usrform" placeholder="Comments..."></textarea><br>
-         <button onclick = "rideToPressed()" type="submit">submit</button>
+         <button id="submit" onclick = "rideToPressed()" type="submit">submit</button>
     </div>
    </div>
 <script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
