@@ -118,6 +118,9 @@ function facebookSignIn(){
 	       to: endTime,
                comments: text
 	   });
+          var file = "to" + airportSelect + ".html";
+          console.log('redirect to here: ' + file);
+          window.location = file; 
        }
 
 
@@ -153,4 +156,7 @@ function rideFromPressed(){
                to: endTime,
 	       comments: text
            });
+          var file = "from" + airportSelect + ".html";
+          console.log('redirect to here: ' + file);
+          window.location = file;
        }
