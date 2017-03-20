@@ -81,8 +81,10 @@ function facebookSignIn(){
 }
 
 
-       function rideToPressed(){
-        event.preventDefault();
+   function rideToPressed(){
+       event.preventDefault();
+       if(window.currentUser){    
+
 	console.log("correct you got here");
            var e = document.getElementById("airport");
            var airportSelect = e.options[e.selectedIndex].text;
@@ -103,6 +105,12 @@ function facebookSignIn(){
 	   console.log(text);
 	   
 	   writeRideTo(airportSelect, currentUser.displayName, currentUser.email, currentUser.photoURL, res, fromTime, toTime, text);
+          }else{
+              console.log('you are definitely not signed in');
+              document.getElementById('id01').style.display='block';
+              console.log('you are not signed in');
+          }
+          
 
        }
 
@@ -127,8 +135,8 @@ function facebookSignIn(){
 
 
 function rideFromPressed(){
-
            event.preventDefault();
+           if(window.currentUser){
            console.log("correct you got here");
            var e = document.getElementById("airport");
            var airportSelect = e.options[e.selectedIndex].text;
@@ -150,7 +158,11 @@ function rideFromPressed(){
            console.log(text);
 
            writeRideFrom(airportSelect, currentUser.displayName, currentUser.email, currentUser.photoURL, res, fromTime, toTime, text);
+           }else{
+               document.getElementById('id01').style.display='block';
+               console.log('you are not signed in');
 
+            }
        }
 
        function writeRideFrom(airportSelect, userName, userEmail, photoID, date, startTime, endTime, text){

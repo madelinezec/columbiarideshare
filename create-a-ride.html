@@ -40,25 +40,13 @@
        <nav>
            <ul>
                <li><a href="index.html">home</a></li>
-                <li class = "login"><button id="quickstart-sign-in" "style="width:auto;">LOGIN</button></li>
-                 <div id="id01" class="modal">
-                     <form class="modal-content animate" action="action_page.php">
-                         <div class="imgcontainer">
-                             <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-                         </div>
-                         <div class="loginMsg">
-                             <p>hi there!</p>
-                             <p>log in to post and comment on columbia ride share</p>
-                         </div>
-                         <button class="loginBtn loginBtn--facebook">connect with facebook</button>
-                         <button onclick = "googleSignin()" class="loginBtn loginBtn--google">connect with google</button>
-                      </form>
-                   </div>
+               <li>create a ride</li>
+               <li>login</li>
            </ul>
        </nav>
   </header>
-  <div id = "wrapper">
-    <div class ="main">
+  <div class = "form">
+      
       <form action="action_page.php">
 	 <label for="airport">Airport</label>
 	 <select id="airport" name="airport">
@@ -69,12 +57,11 @@
 
 	 <label for="day">Day</label>
 	 <input type="text" id="datepicker"><br>
-         <p></p>
-	 <label for="time" class="label">Time</label><input type="text" id="startTime" class="timepicker">-<input type="text" id="endTime" class="timepicker"><br>
-         <textarea id="comment" rows="7" cols="50" name="comment" form="usrform" placeholder="Comments..."></textarea><br>
-         <button id="submit" onclick = "rideToPressed()" type="submit">submit</button>
+	 <label for="time">Time </label><input type="text" id="startTime" class="timepicker"> - <input type="text" id="endTime" class="timepicker"><br>
+         <textarea rows="7" cols="50" name="comment" form="usrform">Comments...</textarea><br>
+         <button onclick = "submitRidePressed()" type="submit">submit</button>
     </div>
-   </div>
+
 <script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
 
 <script src="https://www.gstatic.com/firebasejs/3.6.10/firebase-app.js"></script>
@@ -93,30 +80,7 @@
   firebase.initializeApp(config);
 </script>
 
-
-<script>
-            // Get the modal
-            var modal = document.getElementById('id01');
-
-            // When the user clicks anywhere outside of the modal, close it
-            window.onclick = function(event) {
-                if (event.target == modal) {
-                    console.log('hello');
-                    modal.style.display = "none";
-                }
-            }
-        </script>
-
-
 <script src="app.js"></script>
-
-<script>
-
-window.onload = function() {  
-    initApp();
-};
-
-</script>
 
 
 </body>
