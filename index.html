@@ -20,7 +20,9 @@
         </style> 
     </head>
     <body>
-        <header> 
+        <header>
+            <div class = "top">
+            </div> 
             <nav>
                 <h1 class = "page-title">Columbia Ride Share</h1>
                 <ul>
@@ -50,7 +52,7 @@
                                 <p>hi there!</p>
                                 <p>log in to post and comment on columbia ride share</p>
                             </div> 
-                            <button class="loginBtn loginBtn--facebook">connect with facebook</button>
+                            <button onclick="facebookSignIn()" class="loginBtn loginBtn--facebook">connect with facebook</button>
 			   <button onclick = "googleSignin()" class="loginBtn loginBtn--google">connect with google     </button>
                         </form>
                     </div>
@@ -64,17 +66,17 @@
                         <div class = "JFK">
                             <h6>JFK</h6>
                            <p> <a href = "toJFK.html">to</a>
-                           <a href = "#">from</a></p>
+                           <a href = "fromJFK.html">from</a></p>
                         </div>
                         <div class = "Newark">
                             <h6>NEWARK</h6>
-                            <p> <a href = "ridesToJFK.html]">to</a>
-                            <a href = "#">from</a></p>
+                            <p> <a href = "toNewark.html">to</a>
+                            <a href = "fromNewark.html">from</a></p>
                         </div>
                         <div class = "bottomRow">
                            <h6>LAGUARDIA</h6>
-                          <p> <a href = "ridesToJFK.html">to</a>
-                          <a href = "#">from</a></p>
+                          <p> <a href = "toLaguardia.html">to</a>
+                          <a href = "fromLaguardia.html">from</a></p>
                         </div>
                        <div class = "createRide">
                           <button class = "button" onclick = "document.getElementById('id02').style.display='block'"style="width:auto;">CREATE A RIDE</button>
@@ -97,8 +99,7 @@
           <div class="section" id="section1"> 
               <div class = "welcome">
                   <div class = "intro">
-                      <p>Lorem ipsum elementum libero curae nam in id maecenas per, inceptos dui a aliquam velit eu ullamcorper ultricies platea, nibh adipiscing pulvinar nunc justo taciti non magna interdum lectus ligula cursus ornare aenean lacus tincidunt, semper gravida bibendum vitae laoreet morbi pharetra, nunc tellus donec imperdiet cubilia consectetur.Suscipit fermentum euismod etiam facilisis metus quam litora blandit himenaeos, convallis placerat felis mollis aliquam ante fringilla morbi tincidunt, at curabitur ligula sapien iaculis risus nullam platea morbi cursus adipiscing aliquet tempor commodo quis leo metus sem dictum.</p>
-                  </div>
+<p>Columbia Ride Share is for CU community members to create carpools to and from tristate area airports. Log in using your google or Facebook account to post when you’ll be heading out. Or, by joining a ride, you can chat with someone with matching itinerary and hail a ride together. </p></div><div class="photo"><img src="amsterdam" width="621" height="349"></img></div>
               </div>
           </div>
         </div>
@@ -106,7 +107,8 @@
         <script src="https://www.gstatic.com/firebasejs/3.6.10/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/3.6.10/firebase-auth.js"></script>
         <script src="https://www.gstatic.com/firebasejs/3.6.10/firebase-database.js"></script>
-
+        <script src="https://www.gstatic.com/firebasejs/3.7.1/firebase-messaging.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.7.1/firebase-storage.js"></script>
         <script>
             // Initialize Firebase
             var config = {
@@ -118,6 +120,11 @@
             };
             firebase.initializeApp(config);
 
+           this.auth = firebase.auth();
+           this.database = firebase.database();
+           this.storage = firebase.storage();
+           this.messaging = firebase.messaging();
+
         </script>
         <script src = "app.js"></script>
         <script>
@@ -126,7 +133,7 @@
 
             // When the user clicks anywhere outside of the modal, close it
             window.onclick = function(event) {
-                if (event.target == modal || document.getElementById('quickstart-sign-in').textContent == 'LOG OUT') {
+                if (event.target == modal) {
                     console.log('hello');
                     modal.style.display = "none";
                 }
