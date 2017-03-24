@@ -1,5 +1,5 @@
 a{
-    color: #c4d8e2;
+    color:   #75aadb;
     text-decoration:none;
 }
 
@@ -7,9 +7,11 @@ body {
         height: 100%;
         margin: 0;
         width: 100%;
-        color: #c4d8e2;
+        color: #75aadb;
         font-family: "Helvetica Neue Light", Helvetica Neue, serif;
 	background-color: #F8F8F8;
+        font-size: 18px;
+        font-weight: bolder; 
 }
 
 .top{
@@ -19,9 +21,10 @@ body {
 .page-title {
     position: relative;
     font-size: 36px;
-    font-weight: lighter;  
     margin-left:5%;
     margin-top:1px;
+    color:   #75aadb;
+
 }
 
 /*Navigation Bar*/ 
@@ -43,7 +46,8 @@ nav li{
   left: 63.5%;
   top: -45px;
   font-variant: small-caps; 
-  font-weight: 500;
+  font-weight: bold;
+  font-size: 18px;
 }
 #ride{
     position:relative;
@@ -317,8 +321,9 @@ button {
     border: none;
     font-family: "Helvetica Neue Light", Helvetica Neue, serif;
     font-variant: small-caps;
-    font-weight: 500;    
-    color: #c4d8e2;
+    font-weight: bolder;
+    font-size: 14px;    
+    color: #75aadb;
 }
 
 .bigBtn:hover{
