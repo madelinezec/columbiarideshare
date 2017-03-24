@@ -117,9 +117,11 @@ function facebookSignIn(){
        function writeRideTo(airportSelect, userName, userEmail, photoID, date, startTime, endTime, text){
           var ref = firebase.database().ref();
           var postsRef = ref.child('TOairport/' + airportSelect); 
-          var newPostRef = postsRef.push(); 
+          var newPostRef = postsRef.push();
+          var postID = newPostRef.key;
+          console.log(postID); 
           newPostRef.set({
-               //aiport: airportSelect,
+               reference: postID,
 	       user: userName,
 	       email: userEmail,
 	       id: photoID,
@@ -169,8 +171,9 @@ function rideFromPressed(){
           var ref = firebase.database().ref();
           var postsRef = ref.child('FROMairport/' + airportSelect);
           var newPostRef = postsRef.push();
+          var postID = newPostRef.key;
           newPostRef.set({
-               //aiport: airportSelect,
+               reference: postID,
                user: userName,
                email: userEmail,
                id: photoID,

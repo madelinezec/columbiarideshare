@@ -1,5 +1,8 @@
 a{
-    color: #c4d8e2;
+        
+        color:   #75aadb;
+
+   //    color: rgb(2, 105, 213);
 }
 body {
         height: 100%;
@@ -24,15 +27,16 @@ nav{
     z-index:-1;
     background-color:white;
     height:50px;
-
 }
 
 .page-title {
     position: relative;
     font-size: 36px;
-    font-weight: lighter;  
+    /font-weight: lighter;  
     margin-left:5%;
     margin-top:1px;
+        color:   #75aadb;
+
 }
 
 .container {
@@ -43,7 +47,6 @@ nav{
 
 
 .main{
-    min-width: 40%;
 }
 .Newark {
     position:relative;
@@ -161,7 +164,7 @@ nav{
     width: 301px;
     margin: 5px; 
     background-image: url(nyu2.jpg);
-    background-size: 301px 401px;
+    background-size: 301px 301px;
     line-height: 200px;   
     text-align: center;
     border-bottom: 1px white;
@@ -306,6 +309,7 @@ nav li{
   top: -45px;
   font-variant: small-caps; 
   font-weight: 500;
+  color: rgb(2, 105, 213);
 }
 nav li a{
     text-decoration:none;
@@ -472,7 +476,8 @@ button {
     font-family: "Helvetica Neue Light", Helvetica Neue, serif;
     font-variant: small-caps;
     font-weight: 500;    
-    color: #c4d8e2;
+    color:  #75aadb;
+       // color: #3079e6;
 }
 
 button:hover{
