@@ -195,6 +195,7 @@ function rideFromPressed(){
           var postsRef = ref.child('FROMairport/' + airportSelect);
           var newPostRef = postsRef.push();
           var postID = newPostRef.key;
+          var dateString = Date.parse(date + ' ' + endTime);
           newPostRef.set({
                reference: postID,
                user: userName,
@@ -203,7 +204,7 @@ function rideFromPressed(){
                when: date,
                from: startTime,
                to: endTime,
-	       rideDate: date + ' ' + endTime,
+	       rideDate: dateString,
                comments: text
            });
           var file = "from" + airportSelect + ".html";
