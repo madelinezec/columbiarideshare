@@ -58,7 +58,24 @@
          return false; 
 	}
     });
+
+         //delete old posts
+       var ref = new firebase.database().ref('TOairport/JFK');
+       var now = Date.now();
+       var cutoff = now;
+       var old = ref.orderByChild('rideDate').endAt(now).limitToLast(1);
+       var listener = old.on('child_added', function(snapshot){
+           console.log('DELETING');
+	   var string = snapshot.val().reference;
+	   console.log(string);
+	   deleteMessage(string);
+	   snapshot.ref.remove();
+       });
+ 
+       console.log('done done done');
+
    }
+ 
  function googleSignOut(){
     console.log('sign out called');
     firebase.auth().signOut();
@@ -80,6 +97,10 @@ function facebookSignIn(){
 
 }
 
+   function deleteMessage(msgToken){
+       var ref = new firebase.database().ref('messages');
+       ref.child(msgToken).remove();
+   }
 
    function rideToPressed(){
        event.preventDefault();
@@ -119,6 +140,7 @@ function facebookSignIn(){
           var postsRef = ref.child('TOairport/' + airportSelect); 
           var newPostRef = postsRef.push();
           var postID = newPostRef.key;
+          var dateString = Date.parse(date + ' ' + endTime);
           console.log(postID); 
           newPostRef.set({
                reference: postID,
@@ -128,6 +150,7 @@ function facebookSignIn(){
 	       when: date, 
 	       from: startTime, 
 	       to: endTime,
+	       rideDate: dateString,
                comments: text
 	   });
           var file = "to" + airportSelect + ".html";
@@ -180,6 +203,7 @@ function rideFromPressed(){
                when: date,
                from: startTime,
                to: endTime,
+	       rideDate: date + ' ' + endTime,
                comments: text
            });
           var file = "from" + airportSelect + ".html";
