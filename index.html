@@ -1,46 +1,52 @@
 <!DOCTYPE html>
 <html>
+
     <head>
         <title>Columbia Ride Share</title>
-        <meta charset="utf-8"/>
+        <meta charset="utf-8" />
         <link rel="stylesheet" type="text/css" href="main.css">
         <link rel="stylesheet" type="text/css" href="jquery.fullPage.css" />
         <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
         <script type="text/javascript" src="jquery.fullPage.js"></script>
         <script type="text/javascript">
             $(document).ready(function() {
-              $('#fullpage').fullpage();
-	    });
+                $('#fullpage').fullpage();
+            });
+
         </script>
         <style>
-            header{
+            header {
                 position: relative;
-                z-index:1;
+                z-index: 1;
             }
-        </style> 
+
+        </style>
     </head>
+
     <body>
         <header>
-            <div class = "top">
-            </div> 
+            <div class="top">
+            </div>
             <nav>
-                <h1 class = "page-title">Columbia Ride Share</h1>
+                <h1 class="page-title">Columbia Ride Share</h1>
                 <ul>
                     <li><a href="#top">home</a></li>
-                    <li><button class="btn btn-link" onclick = "document.getElementById('id02').style.display='block'"style="width:auto;">CREATE A RIDE</button></a></li>
+                    <li><button class="btn btn-link" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">CREATE A RIDE</button></a>
+                    </li>
                     <div id="id02" class="modal">
                         <form class="modal-content animate" action="action_page.php">
                             <div class="imgcontainer">
                                 <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
                             </div>
-                            <div class = "loginMsg">
-                                <p>Where are you headed?<p>
-                                  <a href="create-a-ride-to-airport.html">I need a ride to the airport</a>
-                                  <a href="create-a-ride-from-airport.html">I need a ride to campus</a>
+                            <div class="loginMsg">
+                                <p>Where are you headed?
+                                    <p>
+                                        <a href="create-a-ride-to-airport.html">I need a ride to the airport</a>
+                                        <a href="create-a-ride-from-airport.html">I need a ride to campus</a>
                             </div>
-                         </form>
-                     </div>
-                    <li class = "login">
+                        </form>
+                    </div>
+                    <li class="login">
                         <button style="width:auto;" id="quickstart-sign-in">LOGIN</button>
                     </li>
                     <div id="id01" class="modal">
@@ -51,57 +57,61 @@
                             <div class="loginMsg">
                                 <p>hi there!</p>
                                 <p>log in to post and comment on columbia ride share</p>
-                            </div> 
+                            </div>
                             <button onclick="facebookSignIn()" class="loginBtn loginBtn--facebook">connect with facebook</button>
-			   <button onclick = "googleSignin()" class="loginBtn loginBtn--google">connect with google     </button>
+                            <button onclick="googleSignin()" class="loginBtn loginBtn--google">connect with google     </button>
                         </form>
                     </div>
                 </ul>
             </nav>
         </header>
-        <div id ="fullpage">
+        <div id="fullpage">
             <div class="section" id="section0">
                 <div class="container">
                     <div class="main" style='width:800px;margin:0 auto;'>
-                        <div class = "JFK">
+                        <div class="JFK">
                             <h6>JFK</h6>
-                           <p> <a href = "toJFK.html">to</a>
-                           <a href = "fromJFK.html">from</a></p>
+                            <p> <a href="toJFK.html">to</a>
+                                <a href="fromJFK.html">from</a></p>
                         </div>
-                        <div class = "Newark">
+                        <div class="Newark">
                             <h6>NEWARK</h6>
-                            <p> <a href = "toNewark.html">to</a>
-                            <a href = "fromNewark.html">from</a></p>
+                            <p> <a href="toNewark.html">to</a>
+                                <a href="fromNewark.html">from</a></p>
                         </div>
-                        <div class = "bottomRow">
-                           <h6>LAGUARDIA</h6>
-                          <p> <a href = "toLaguardia.html">to</a>
-                          <a href = "fromLaguardia.html">from</a></p>
+                        <div class="bottomRow">
+                            <h6>LAGUARDIA</h6>
+                            <p> <a href="toLaguardia.html">to</a>
+                                <a href="fromLaguardia.html">from</a></p>
                         </div>
-                       <div class = "createRide">
-                          <button class = "button" onclick = "document.getElementById('id02').style.display='block'"style="width:auto;">CREATE A RIDE</button>
-                       </div>    
-                       <div id="id02" class="modal">
-                  	       <form class="modal-content animate" action="action_page.php">
-                  	           <div class="imgcontainer">
-                                   <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
-                               </div>
-                        		   <div class = "loginMsg">
-                                   <p>Where are you headed?<p>
-                                   <a href="create-a-ride-to-airport.html">I need a ride to the airport</a>
-                                   <a href="create-a-ride-from-airport.html">I need a ride to campus</a>
-                              </div>
-                      		</form>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="section" id="section1"> 
-              <div class = "welcome">
-                  <div class = "intro">
-<p>Columbia Ride Share is for CU community members to create carpools to and from tristate area airports. Log in using your google or Facebook account to post when you’ll be heading out. Or, by joining a ride, you can chat with someone with matching itinerary and hail a ride together. </p></div><div class="photo"><img src="amsterdam.png" width="621" height="349"></img></div>
-              </div>
-          </div>
+                        <div class="createRide">
+                            <button class="button" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">CREATE A RIDE</button>
+                        </div>
+                        <div id="id02" class="modal">
+                            <form class="modal-content animate" action="action_page.php">
+                                <div class="imgcontainer">
+                                    <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+                                </div>
+                                <div class="loginMsg">
+                                    <p>Where are you headed?
+                                        <p>
+                                            <a href="create-a-ride-to-airport.html">I need a ride to the airport</a>
+                                            <a href="create-a-ride-from-airport.html">I need a ride to campus</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section" id="section1">
+                <div class="welcome">
+                    <div class="intro">
+                        <p>Columbia Ride Share is for CU community members to create carpools to and from tristate area airports. Log in using your google or Facebook account to post when you’ll be heading out. Or, by joining a ride, you can chat with someone with matching itinerary and hail a ride together. </p>
+                    </div>
+                    <div class="photo"><img src="amsterdam.png" width="621" height="349"></img>
+                    </div>
+                </div>
+            </div>
         </div>
         <script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
         <script src="https://www.gstatic.com/firebasejs/3.6.10/firebase-app.js"></script>
@@ -120,13 +130,13 @@
             };
             firebase.initializeApp(config);
 
-           this.auth = firebase.auth();
-           this.database = firebase.database();
-           this.storage = firebase.storage();
-           this.messaging = firebase.messaging();
+            this.auth = firebase.auth();
+            this.database = firebase.database();
+            this.storage = firebase.storage();
+            this.messaging = firebase.messaging();
 
         </script>
-        <script src = "app.js"></script>
+        <script src="app.js"></script>
         <script>
             // Get the modal
             var modal = document.getElementById('id01');
@@ -138,30 +148,38 @@
                     modal.style.display = "none";
                 }
             }
+
         </script>
 
-        <script> 
+        <script>
             var modal = document.getElementById('id02');
 
-                window.onclick= function(event){
-    
-                    if(event.target == modal) {
-                        modal.style.display = "none";
-                    }
+            window.onclick = function(event) {
+
+                if (event.target == modal) {
+                    modal.style.display = "none";
                 }
+            }
+
         </script>
-        <script>  
+        <script>
             window.onload = function() {
                 initApp();
             };
+
         </script>
         <script>
             $("a[href='#top']").click(function() {
-                $("html, body").animate({ scrollTop: 0 }, "slow");
+                $("html, body").animate({
+                    scrollTop: 0
+                }, "slow");
                 return false;
             });
+
         </script>
 
 
-      </body>
+    </body>
+
 </html>
+
