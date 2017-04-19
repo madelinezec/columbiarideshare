@@ -31,7 +31,7 @@
         console.log('initMessenger called with this reference: ' + reference);
         if (window.currentUser) {
             console.log('you are signed in');
-            document.getElementById('convoHeader').innerHTML = name;
+            document.getElementById('convoHeader').innerHTML = name + '<div class ="popup-right" onclick="closeBox()">X</div>';
             document.getElementById('messages-card').style.display = "";
             window.friendlyChat = new FriendlyChat(reference);
 
@@ -52,5 +52,10 @@
         };
     }
 
+
+   function closeBox() {
+     document.getElementById('messages-card').style.display = "none";
+     console.log('you caaaaalled dina?');
+   }
 
 

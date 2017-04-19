@@ -16,7 +16,7 @@
 'use strict';
 
 // Initializes FriendlyChat.
-function FriendlyChat() {
+function FriendlyChat(reference) {
   console.log('new chat');
   this.checkSetup();
 
@@ -31,7 +31,8 @@ function FriendlyChat() {
   this.userPic = document.getElementById('user-pic');
   this.userName = document.getElementById('user-name');
   this.signInSnackbar = document.getElementById('must-signin-snackbar');
-
+  this.postReference = reference;
+ // console.log(this.postReference);
   // Saves message on form submit.
   this.messageForm.addEventListener('submit', this.saveMessage.bind(this));
 
@@ -66,7 +67,9 @@ FriendlyChat.prototype.initFirebase = function() {
 // Loads chat messages history and listens for upcoming ones.
 FriendlyChat.prototype.loadMessages = function() {
   // Reference to the /messages/ database path.
-  this.messagesRef = this.database.ref('messages');
+  this.messagesRef = this.database.ref('messages/' + this.postReference);
+  //console.log(this.postReference)
+  console.log('loadMsg messagesRef' + this.messagesRef); 
   // Make sure we remove all previous listeners.
   this.messagesRef.off();
 
@@ -82,6 +85,7 @@ FriendlyChat.prototype.loadMessages = function() {
 // Saves a new message on the Firebase DB.
 FriendlyChat.prototype.saveMessage = function(e) {
   e.preventDefault();
+    console.log('saveMsg messagesRef' + this.messagesRef);
   // Check that the user entered a message and is signed in.
   if (this.messageInput.value && this.checkSignedInWithMessage()) {
     var currentUser = this.auth.currentUser;
