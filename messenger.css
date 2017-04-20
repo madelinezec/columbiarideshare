@@ -73,6 +73,11 @@
    padding-bottom: 6px;
 }
 
+.popup-right{
+    position: relative;
+    float: right;
+    margin-right: 7px;
+}
 #convoHeader:hover{
     cursor:pointer;
 }
