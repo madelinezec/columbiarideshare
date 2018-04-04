@@ -11,9 +11,10 @@ I created CURideShare to synchronizing travel plans while minimize notifications
 
 
 Details:
-•Built a responsive web app on Firebase platform for cab sharing at Columbia University
-•Designed a consistent, fullscreen user environment with HTML, CSS, and fullpage.js
-•Created the instant messaging feature and set up push notifications with Firebase Cloud Messaging
-•Integrated the NoSQL Cloud Database to store and synchronize users posts in real time
+
+•Built a responsive web app on Firebase platform for cab sharing at Columbia University \n
+•Designed a consistent, fullscreen user environment with HTML, CSS, and fullpage.js \n
+•Created the instant messaging feature and set up push notifications with Firebase Cloud Messaging \n
+•Integrated the NoSQL Cloud Database to store and synchronize users posts in real time \n
 
 Hire me: https://angel.co/madelinezec
